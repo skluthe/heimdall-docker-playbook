@@ -1,4 +1,3 @@
 ---
-- hosts: all
 - import_playbook: dependencies.yml
 - import_playbook: heimdall-docker-playbook.yml
