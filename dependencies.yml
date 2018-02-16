@@ -4,9 +4,10 @@
   - name: Add Ansible PPA
     apt_repository:
       repo: 'ppa:ansible/ansible'
-
+    become: true
   - name: Install Packages
     apt: name={{item}} update_cache=yes state=latest
     with_items:
       - docker.io
       - ansible
+    become: true
