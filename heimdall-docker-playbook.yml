@@ -1,5 +1,4 @@
 ---
-- hosts: all
   tasks:
   - name: Deploy Heimdall Container
     docker_container:

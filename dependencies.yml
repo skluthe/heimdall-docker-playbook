@@ -1,5 +1,4 @@
 ---
-- hosts: all  
   tasks:
   - name: Add Ansible PPA
     apt_repository:
