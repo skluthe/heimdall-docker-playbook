@@ -1,15 +1,4 @@
 ---
-  pre_tasks:
-    - name: Add Ansible PPA
-      apt_repository:
-        repo: 'ppa:ansible/ansible'
-
-    - name: Install Packages
-      apt: name={{item}} update_cache=yes state=latest
-      with_items:
-        - docker.io
-        - ansible
-
   tasks:
   - name: Deploy Heimdall Container
     docker_container:
