@@ -1,0 +1,13 @@
+---
+- hosts: all
+  pre_tasks: 
+    - debug:
+      msg: Install Dependencies
+
+    - include_tasks: depenencies.yml
+  
+  tasks:
+    - debug:
+      msg: Deploy Docker contianer
+    
+    - include_tasks: heimdall-docker-playbook.yml
