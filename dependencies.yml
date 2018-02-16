@@ -1,6 +1,6 @@
 ---
-  
-  pre_tasks:
+- hosts: all  
+  tasks:
   - name: Add Ansible PPA
     apt_repository:
       repo: 'ppa:ansible/ansible'
