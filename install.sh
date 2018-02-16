@@ -1,3 +1,3 @@
 #!/bin/bash
-ansible-playbook dependencies.yml
-ansible-playbook heimdall-docker-playbook.yml
+sudo apt install ansible -y
+sudo ansible-playbook main.yml
