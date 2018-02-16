@@ -3,15 +3,12 @@
     - name: Add Ansible PPA
       apt_repository:
         repo: 'ppa:ansible/ansible'
-  
-    - name: Update ansible to the latest version 
-      apt:
-        update_cache: yes
-        name: ansible
-        state: present
 
     - name: Install Packages
-      apt: name=docker.io update_cache=yes state=latest
+      apt: name={{item}} update_cache=yes state=latest
+      with_items:
+        - docker.io
+        - ansible
 
   tasks:
   - name: Deploy Heimdall Container
