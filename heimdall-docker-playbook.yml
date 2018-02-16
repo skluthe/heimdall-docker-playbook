@@ -1,0 +1,18 @@
+---
+
+  tasks:
+  - name: Deploy Heimdall Container
+    docker_container:
+      name: heimdall
+      image: linuxserver/heimdall
+      pull: yes
+      published_ports:
+        - "80:80"
+      env:
+        PUID: "1000"
+        PGID: "1000"
+      volumes:
+        - "/opt/appdata/heimdall:/config"
+        - "/etc/localtime:/etc/localtime:ro"
+      restart_policy: always
+      state: started
