@@ -1,7 +1,4 @@
 ---
 - hosts: all
-  pre_tasks: 
-    - import_playbook: dependencies.yml
-  
-  tasks:  
-    - import_playbook: heimdall-docker-playbook.yml
+- import_playbook: dependencies.yml
+- import_playbook: heimdall-docker-playbook.yml
