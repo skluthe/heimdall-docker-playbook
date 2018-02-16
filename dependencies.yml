@@ -6,8 +6,13 @@
       repo: 'ppa:ansible/ansible'
     become: true
   - name: Install Packages
-    apt: name={{item}} update_cache=yes state=latest
+    package: name={{item}} state=latest
     with_items:
       - docker.io
       - ansible
+      - python-pip
+      - docker-py
     become: true
+  - name: Install docker.py
+    pip:
+      name: docker-py
